@@ -28,7 +28,7 @@ public class Main {
         tesla.checkBattery();
         tesla.drive();
         System.out.println("\n==============================================================================\n");
-        Car.printCarCount();
+        Car.printCarsInfo();
 
 
 
