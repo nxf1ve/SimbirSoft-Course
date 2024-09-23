@@ -1,4 +1,4 @@
-import Interfaces.IMaintenance;
+package lection_1;
 
 public class SportCar extends Car implements IMaintenance {
     private boolean hasTurbo;

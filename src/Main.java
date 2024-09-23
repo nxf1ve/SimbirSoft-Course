@@ -1,3 +1,8 @@
+import lection_1.Car;
+import lection_1.ElectricCar;
+import lection_1.SportCar;
+import lection_1.Truck;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {

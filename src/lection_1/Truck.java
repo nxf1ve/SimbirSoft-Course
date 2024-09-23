@@ -1,6 +1,6 @@
-import Interfaces.*;
+package lection_1;
 
-class Truck extends Car implements ICargoHandling, IMaintenance {
+public class Truck extends Car implements ICargoHandling, IMaintenance {
     private double cargoCapacity;
     private double currentCargoWeight;
 

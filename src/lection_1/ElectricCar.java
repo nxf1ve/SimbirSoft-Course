@@ -1,4 +1,4 @@
-import Interfaces.IMaintenance;
+package lection_1;
 
 public class ElectricCar extends Car implements IMaintenance {
     private int batteryCapacity;
