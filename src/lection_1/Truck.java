@@ -1,8 +1,20 @@
-import Interfaces.*;
+package lection_1;
 
-class Truck extends Car implements ICargoHandling, IMaintenance {
+public class Truck extends Car implements ICargoHandling, IMaintenance {
     private double cargoCapacity;
+    public double getCargoCapacity() {
+        return cargoCapacity;
+    }
+    public void setCargoCapacity(double cargoCapacity) {
+        this.cargoCapacity = cargoCapacity;
+    }
     private double currentCargoWeight;
+    public double getCurrentCargoWeight() {
+        return currentCargoWeight;
+    }
+    public void setCurrentCargoWeight(double currentCargoWeight) {
+        this.currentCargoWeight = currentCargoWeight;
+    }
 
     public Truck(String brand, String model, int year, int maxSpeed, double price, double cargoCapacity) {
         super(brand, model, year, maxSpeed, price);
@@ -11,7 +23,7 @@ class Truck extends Car implements ICargoHandling, IMaintenance {
 
     @Override
     public void drive() {
-        if (currentCargoWeight > 0) {
+        if (getCurrentCargoWeight() > 0) {
             System.out.println("Грузовик едет с грузом");
         }
         else {
@@ -21,9 +33,9 @@ class Truck extends Car implements ICargoHandling, IMaintenance {
 
     @Override
     public void loadCargo(double weight) {
-        if (weight <= cargoCapacity) {
-            currentCargoWeight = weight;
-            System.out.println("Загрузка грузовика: " + weight + " кг");
+        if (weight + getCurrentCargoWeight() <= getCargoCapacity()) {
+            setCurrentCargoWeight(getCurrentCargoWeight() + weight);
+            System.out.println("Загрузка грузовика: " + weight + " кг, текущая загрузка: " + getCurrentCargoWeight() + " кг");
         } else {
             System.out.println("Грузовик загружен полностью!");
         }
@@ -31,8 +43,8 @@ class Truck extends Car implements ICargoHandling, IMaintenance {
 
     @Override
     public void unloadCargo() {
-        System.out.println("Выгружен груз весом: " + currentCargoWeight + " кг");
-        currentCargoWeight = 0;
+        System.out.println("Выгружен груз весом: " + getCurrentCargoWeight() + " кг");
+        setCurrentCargoWeight(0);
     }
 
     @Override
