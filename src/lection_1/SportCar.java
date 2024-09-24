@@ -5,7 +5,16 @@ public class SportCar extends Car implements IMaintenance {
     public void setHasTurbo(boolean state) {
         hasTurbo = state;
     }
+    public boolean getHasTurbo() {
+        return hasTurbo;
+    }
     private boolean hasSpoiler;
+    public void setHasSpoiler(boolean state) {
+        hasSpoiler = state;
+    }
+    public boolean getHasSpoiler() {
+        return hasSpoiler;
+    }
 
     public SportCar(String brand, String model, int year, int maxSpeed, double price, boolean hasSpoiler, boolean hasTurbo) {
         super(brand, model, year, maxSpeed, price);
@@ -14,8 +23,8 @@ public class SportCar extends Car implements IMaintenance {
     }
 
     public void toggleSpoiler(boolean state) {
-        hasSpoiler = state;
-        if (hasSpoiler) {
+        setHasSpoiler(state);
+        if (getHasSpoiler()) {
             System.out.println("Спойлер установлен.");
         } else {
             System.out.println("Спойлер снят.");
@@ -23,13 +32,13 @@ public class SportCar extends Car implements IMaintenance {
     }
     @Override
     public void drive() {
-        if (hasTurbo && hasSpoiler) {
+        if (getHasTurbo() && getHasSpoiler()) {
             System.out.println("Турбо активировано, спойлер установлен, спорткар едет");
         }
-        else if (hasSpoiler && !hasTurbo) {
+        else if (getHasSpoiler() && !getHasTurbo()) {
             System.out.println("Спойлер установлен, турбо нет, спорткар едет");
         }
-        else if (!hasSpoiler && hasTurbo) {
+        else if (!getHasSpoiler() && getHasTurbo()) {
             System.out.println("Турбо активировано, спойлер не установлен, спорткар едет");
         }
         else {
