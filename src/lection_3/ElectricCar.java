@@ -1,4 +1,4 @@
-package lection_1;
+package lection_3;
 
 public class ElectricCar extends Car implements IMaintenance {
     private int batteryCapacity;

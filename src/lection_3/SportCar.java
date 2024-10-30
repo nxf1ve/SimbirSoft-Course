@@ -1,4 +1,4 @@
-package lection_1;
+package lection_3;
 
 public class SportCar extends Car implements IMaintenance {
     private boolean hasTurbo;

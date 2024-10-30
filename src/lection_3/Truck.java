@@ -1,6 +1,6 @@
-package lection_1;
+package lection_3;
 
-public class Truck extends Car implements ICargoHandling, IMaintenance {
+public class Truck extends Car implements ICargoHandler<Double>, IMaintenance {
     private double cargoCapacity;
     public double getCargoCapacity() {
         return cargoCapacity;
@@ -32,7 +32,7 @@ public class Truck extends Car implements ICargoHandling, IMaintenance {
     }
 
     @Override
-    public void loadCargo(double weight) {
+    public void loadCargo(Double weight) {
         if (weight + getCurrentCargoWeight() <= getCargoCapacity()) {
             setCurrentCargoWeight(getCurrentCargoWeight() + weight);
             System.out.println("Загрузка грузовика: " + weight + " кг, текущая загрузка: " + getCurrentCargoWeight() + " кг");

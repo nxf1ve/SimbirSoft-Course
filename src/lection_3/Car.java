@@ -1,7 +1,4 @@
-package lection_1;
-
-import java.util.ArrayList;
-import java.util.List;
+package lection_3;
 
 public abstract class Car {
     protected String brand;
@@ -39,16 +36,12 @@ public abstract class Car {
     public void setPrice(double price) {
         this.price = price;
     }
-    private static int carsCount = 0;
-    private static List<Car> carsList = new ArrayList<>();
     public Car(String brand, String model, int year, int maxSpeed, double price) {
         this.brand = brand;
         this.model = model;
         this.year = year;
         this.maxSpeed = maxSpeed;
         this.price = price;
-        carsCount++;
-        carsList.add(this);
     }
 
     public abstract void drive();
@@ -57,16 +50,6 @@ public abstract class Car {
         System.out.println("Марка: " + getBrand() + ", Модель: " + getModel() +
                 ", Год выпуска: " + getYear() + ", Макс. скорость: " +
                 getMaxSpeed() + ", Цена: " + getPrice());
-    }
-
-    public static void printCarsCount() {
-        System.out.println("Всего машин: " + carsCount);
-    }
-    public static void printCarsInfo() {
-        System.out.println("Всего машин: " + carsCount + ", вот они:");
-        for (Car car : carsList) {
-            car.printInfo();
-        }
     }
 
 }
