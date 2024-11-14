@@ -17,7 +17,7 @@ public class Authorization {
 
     }
     private static void validateLogin(String login) throws WrongLoginException {
-        if (login.length() > 20) {
+        if (login.length() >= 20) {
             throw new WrongLoginException("Логин слишком длинный. Максимальная длина — 20 символов.");
         }
         if (!login.matches("^[a-zA-Z0-9_]+$")) {
@@ -26,7 +26,7 @@ public class Authorization {
     }
 
     private static void validatePassword(String password, String confirmPassword) throws WrongPasswordException {
-        if (password.length() > 20) {
+        if (password.length() >= 20) {
             throw new WrongPasswordException("Пароль слишком длинный. Максимальная длина — 20 символов.");
         }
         if (!password.matches("^[a-zA-Z0-9_]+$")) {
